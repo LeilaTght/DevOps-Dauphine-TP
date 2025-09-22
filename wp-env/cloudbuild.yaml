@@ -1,0 +1,18 @@
+substitutions:
+  _AR_REGION: "europe-west1"
+  _AR_REPO: "website-tools"
+  _IMAGE: "wp-env"
+
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t','$_AR_REGION-docker.pkg.dev/$PROJECT_ID/$_AR_REPO/$_IMAGE:$BUILD_ID',
+        '-t','$_AR_REGION-docker.pkg.dev/$PROJECT_ID/$_AR_REPO/$_IMAGE:latest',
+        '-f','Dockerfile','.'
+      ]
+
+images:
+  - '$_AR_REGION-docker.pkg.dev/$PROJECT_ID/$_AR_REPO/$_IMAGE:$BUILD_ID'
+  - '$_AR_REGION-docker.pkg.dev/$PROJECT_ID/$_AR_REPO/$_IMAGE:latest'

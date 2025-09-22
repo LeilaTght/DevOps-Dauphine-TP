@@ -1,0 +1,9 @@
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+*.x5
+*.zip
+*.tar.gz
+.terraform/providers/registry.terraform.io/hashicorp/google/7.3.0/linux_amd64/terraform-provider-google_v7.3.0_x5
+.terraform/providers/
